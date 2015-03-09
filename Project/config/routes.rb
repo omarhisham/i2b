@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   get 'pages/home'
   get 'pages/signup'
   get 'pages/login'
