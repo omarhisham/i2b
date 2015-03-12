@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :views
   devise_for :users
   resources :events
 
   get 'pages/home'
   get 'pages/home2'
+  get 'pages/home3'
   get 'pages/signup'
   get 'pages/login'
   root 'pages#home'

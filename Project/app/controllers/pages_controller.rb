@@ -7,6 +7,12 @@ class PagesController < ApplicationController
 
 
   def home2
+  	if current_user.admin?
+  render :action => 'home3'
+   end
+  end
+
+  def home3
   end
 
   def login
