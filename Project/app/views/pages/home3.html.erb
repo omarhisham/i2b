@@ -40,7 +40,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" <%= link_to "Events Calendar", :controller => :events, :action => :index  %></a>-->
-               
+               <%= link_to "All Users", :controller => :users, :action => :index  %></a>-->
+               <%= link_to "Users awaiting approval", :controller => :users, :action => :index, :approved => "false"  %></a>-->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -80,6 +81,7 @@
 
         <div class="row">
             <div class="col-sm-8">
+
                 <h2>Idea To Business</h2>
                 <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
