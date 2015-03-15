@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  respond_to :html, :json
   def new
   	@user = User.new 
   end
@@ -21,4 +22,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
   end
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    respond_with @user
+  end
+
+end
 end
