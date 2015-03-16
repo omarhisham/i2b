@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  respond_to :html, :json
+<<<<<<< HEAD
   def new
   	@user = User.new 
   end
@@ -25,4 +27,20 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
   end
+=======
+ 
+  # Other actions omitted.
+ 
+>>>>>>> 17f50905dc62925dc37e744fa184658d5419c08a
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    respond_with @user
+  end
+
+<<<<<<< HEAD
 end
+end
+=======
+end
+>>>>>>> 17f50905dc62925dc37e744fa184658d5419c08a
