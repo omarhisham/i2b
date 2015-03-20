@@ -1,10 +1,20 @@
 class UsersController < ApplicationController
   respond_to :html, :json
-<<<<<<< HEAD
+    before_action :logged_in_user, only: [:edit, :update]
+def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+  def show
+    @user = User.find(params[:id])
+end
   def new
-  	@user = User.new 
+    @user = User.new 
+
   end
 
+ 
   def create
     @user = User.new(params[:user_params])
     if @user.save
@@ -16,31 +26,29 @@ class UsersController < ApplicationController
     end
     render "new"
   end
+
+
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+
   def update
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
     respond_with @user
   end
+
+
+
 
    private
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
   end
-=======
- 
-  # Other actions omitted.
- 
->>>>>>> 17f50905dc62925dc37e744fa184658d5419c08a
-  def update
-    @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
-    respond_with @user
-  end
+end
 
-<<<<<<< HEAD
-end
-end
-=======
-end
->>>>>>> 17f50905dc62925dc37e744fa184658d5419c08a
+
+
