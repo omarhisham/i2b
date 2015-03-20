@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :events
 
   get 'pages/home'
-  get 'events/index2'
+  get 'users/show'
+  get 'events/userview'
   get 'users/index'
   get 'users/edit'
   get 'pages/home2'

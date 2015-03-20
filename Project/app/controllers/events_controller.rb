@@ -4,10 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    
     @events = Event.all
   end
 
-   def index2
+  def userview
     @events = Event.all
   end
 
