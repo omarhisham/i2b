@@ -7,7 +7,7 @@ class AddApprovedToUser < ActiveRecord::Migration
   class AddApprovedToUser < ActiveRecord::Migration
   def self.up
     add_column :users, :approved, :boolean, :default => false, :null => false
-    add_index  :users, :approved
+    add_index  :users, :approved, :boolean, :default => false, :null => false
   end
 
   def self.down

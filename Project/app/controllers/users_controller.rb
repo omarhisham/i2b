@@ -16,17 +16,23 @@ class UsersController < ApplicationController
   end
 
     def index
-    if params[:approved] == "false"
-      @users = User.find_all_by_approved(false)
-    else
-      @users = User.all
-    end
+    #if params[:approved] == "false"
+       @users = User.all
+       # else
+    #  @users = User.all
+    #end
   end
 
 
-   private
+  def edit1
+    
+  end
 
+  
+
+
+   
   def user_params
-    params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
+    params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password, :approved)
   end
 end

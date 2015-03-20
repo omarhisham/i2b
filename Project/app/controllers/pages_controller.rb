@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def home2
   	if current_user.admin?
-  render :action => 'home3'
+  redirect_to :action => 'home3'
    end
   end
 
