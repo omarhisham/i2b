@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/home3'
   get 'pages/signup'
   get 'pages/login'
+  match 'users/:id/approve'=> 'users#approve_user', :via => [:get], as: 'approve_user'
   root 'pages#home'
   
 
